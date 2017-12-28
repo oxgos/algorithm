@@ -4,6 +4,8 @@ exports.selectSort = (arr, n) => {
         minIndex = i
         for (var j = i + 1; j < n; j++) {
             if (arr[j] < arr[minIndex]) {
+                // 解构赋值会很慢
+                // [arr[j], arr[minIndex]] = [arr[minIndex], arr[j]]
                 let temp = arr[minIndex]
                 arr[minIndex] = arr[j]
                 arr[j] = temp
