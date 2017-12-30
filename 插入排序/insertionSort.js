@@ -16,3 +16,16 @@ exports.insertSort = (arr, n) => {
     }
     return arr
 }
+
+exports.insertSortOther = (arr, s, l) => {
+    for (var i = s + 1; i <= l; i++) {
+        var j,
+            temp = arr[i]
+            
+        for (j = i; j > s && temp < arr[j - 1]; j--) {
+            arr[j] = arr[j - 1]
+        }
+        arr[j] = temp
+    }
+    return arr
+}

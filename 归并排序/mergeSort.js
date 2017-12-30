@@ -1,13 +1,20 @@
+var { insertSortOther } = require('./../插入排序/insertionSort')
+
 exports.mergeSort = (arr, n) => {
     // 把[s, l]的数组归并排序
     (function _mergeSort(arr, s, l) {
-        if ( s >= l) {
-            return;
+        /* if ( s >= l) {
+            return; */
+        if ( l - s <= 15) {
+            insertSortOther(arr, s, l)
+            return
         } else {
             var mid = Math.floor((s + l) / 2)
             _mergeSort(arr, s, mid)
             _mergeSort(arr, mid + 1, l)
-            _merge(arr, s, mid, l)
+            if (arr[mid] > arr[mid + 1]) {
+                _merge(arr, s, mid, l)
+            }
         }
     })(arr, 0, n - 1)
     
