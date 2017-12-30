@@ -5,6 +5,8 @@ exports.mergeSort = (arr, n) => {
     (function _mergeSort(arr, s, l) {
         /* if ( s >= l) {
             return; */
+
+        // 在最后小范围的排序,因近乎有序数组,所以插入排序较快,以此优化加速
         if ( l - s <= 15) {
             insertSortOther(arr, s, l)
             return

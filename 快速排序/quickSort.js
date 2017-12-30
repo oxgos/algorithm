@@ -15,15 +15,17 @@ exports.quickSort = (arr, n) => {
             
         for (let i = s + 1; i <= l; i++) {
             if (arr[i] < v) {
-                let temp = arr[j + 1]
+                /* let temp = arr[j + 1]
                 arr[j + 1] = arr[i]
-                arr[i] = temp
+                arr[i] = temp */
+                arr.swap(j + 1, i)
                 j++
             }
         }
-        let temp = arr[s]
+        /* let temp = arr[s]
         arr[s] = arr[j]
-        arr[j] = temp
+        arr[j] = temp */
+        arr.swap(s, j)
         return j
     }
 }
